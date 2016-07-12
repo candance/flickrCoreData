@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Automatic">
+    <entity name="Photo" representedClassName="FCDPhoto" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="fullSizedImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnailImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="photoPlace" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Place" inverseName="placePhoto" inverseEntity="Place" syncable="YES"/>
+    </entity>
+    <entity name="Place" representedClassName="FCDPlace" syncable="YES">
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="placeID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="placePhoto" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Photo" inverseName="photoPlace" inverseEntity="Photo" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Photo" positionX="-270" positionY="9" width="128" height="148"/>
+        <element name="Place" positionX="-54" positionY="9" width="128" height="105"/>
+    </elements>
+</model>
