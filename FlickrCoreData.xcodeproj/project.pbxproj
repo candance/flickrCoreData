@@ -20,6 +20,7 @@
 		0D0868161D3434CE008586E8 /* FCDPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0868121D3434CE008586E8 /* FCDPhoto.m */; };
 		0D08682A1D3440A5008586E8 /* FCDPlace+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0868271D3440A5008586E8 /* FCDPlace+CoreDataProperties.m */; };
 		0D08682B1D3440A5008586E8 /* FCDPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0868291D3440A5008586E8 /* FCDPlace.m */; };
+		0D08682E1D349B02008586E8 /* ImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D08682D1D349B02008586E8 /* ImageVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		0D0868271D3440A5008586E8 /* FCDPlace+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FCDPlace+CoreDataProperties.m"; sourceTree = "<group>"; };
 		0D0868281D3440A5008586E8 /* FCDPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCDPlace.h; sourceTree = "<group>"; };
 		0D0868291D3440A5008586E8 /* FCDPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCDPlace.m; sourceTree = "<group>"; };
+		0D08682C1D349B02008586E8 /* ImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageVC.h; sourceTree = "<group>"; };
+		0D08682D1D349B02008586E8 /* ImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				0D0867EC1D32FFD2008586E8 /* FlickrCoreData.xcdatamodeld */,
+				0D0867E91D32FFD1008586E8 /* Main.storyboard */,
 				0D0868261D3440A5008586E8 /* FCDPlace+CoreDataProperties.h */,
 				0D0868271D3440A5008586E8 /* FCDPlace+CoreDataProperties.m */,
 				0D0868281D3440A5008586E8 /* FCDPlace.h */,
@@ -88,13 +92,14 @@
 				0D0868101D3434CE008586E8 /* FCDPhoto+CoreDataProperties.m */,
 				0D0868111D3434CE008586E8 /* FCDPhoto.h */,
 				0D0868121D3434CE008586E8 /* FCDPhoto.m */,
-				0D0867E31D32FFD1008586E8 /* AppDelegate.h */,
-				0D0867E41D32FFD1008586E8 /* AppDelegate.m */,
-				0D0867E91D32FFD1008586E8 /* Main.storyboard */,
 				0D0868051D34192C008586E8 /* FCDJustPostedFlickrPhotosVC.h */,
 				0D0868061D34192C008586E8 /* FCDJustPostedFlickrPhotosVC.m */,
 				0D0868081D3432A7008586E8 /* PhotoInfoPlaceCell.h */,
 				0D0868091D3432A7008586E8 /* PhotoInfoPlaceCell.m */,
+				0D08682C1D349B02008586E8 /* ImageVC.h */,
+				0D08682D1D349B02008586E8 /* ImageVC.m */,
+				0D0867E31D32FFD1008586E8 /* AppDelegate.h */,
+				0D0867E41D32FFD1008586E8 /* AppDelegate.m */,
 				0D0868001D330921008586E8 /* Flickr Fetcher */,
 				0D0867E01D32FFD1008586E8 /* Supporting Files */,
 			);
@@ -193,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D0868161D3434CE008586E8 /* FCDPhoto.m in Sources */,
+				0D08682E1D349B02008586E8 /* ImageVC.m in Sources */,
 				0D0867EE1D32FFD2008586E8 /* FlickrCoreData.xcdatamodeld in Sources */,
 				0D0868071D34192C008586E8 /* FCDJustPostedFlickrPhotosVC.m in Sources */,
 				0D08682B1D3440A5008586E8 /* FCDPlace.m in Sources */,

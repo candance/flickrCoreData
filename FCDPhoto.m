@@ -51,10 +51,4 @@
 }
 
 
-+ (void)loadPhotosFromFlickrArray:(NSArray *)photos // of Flickr Dictionary;
-         intoManagedObjectContext:(NSManagedObjectContext *)context {
-    
-}
-
-
 @end

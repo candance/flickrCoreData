@@ -10,6 +10,7 @@
 #import "FlickrFetcher.h"
 #import "PhotoInfoPlaceCell.h"
 #import "FCDPhoto.h"
+#import "ImageVC.h"
 
 @interface FCDJustPostedFlickrPhotosVC () <UITableViewDataSource, UITableViewDelegate>
 
@@ -54,23 +55,14 @@
     });
 }
 
-//- (void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
-//    _managedObjectContext = managedObjectContext;
-//    
-//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Photo"];
-//    request.predicate = nil;
-//
-//    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]];
-//                                
-//    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:managedObjectContext sectionNameKeyPath:nil cacheName:nil];
-//}
-
 #pragma mark - Fetching
 
 - (void)performFetch
 {
     // Initialize Fetch Request
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Photo"];
+    
+    [fetchRequest setFetchLimit:30];
     
     // Add Sort Descriptors
     [fetchRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]]];
@@ -92,25 +84,6 @@
     
     [self.tableView reloadData];
 }
-
-//- (void)setFetchedResultsController:(NSFetchedResultsController *)newfrc
-//{
-//    NSFetchedResultsController *oldfrc = _fetchedResultsController;
-//    if (newfrc != oldfrc) {
-//        _fetchedResultsController = newfrc;
-//        newfrc.delegate = self;
-//        if ((!self.title || [self.title isEqualToString:oldfrc.fetchRequest.entity.name]) && (!self.navigationController || !self.navigationItem.title)) {
-//            self.title = newfrc.fetchRequest.entity.name;
-//        }
-//        if (newfrc) {
-//            if (self.debug) NSLog(@"[%@ %@] %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), oldfrc ? @"updated" : @"set");
-//            [self performFetch];
-//        } else {
-//            if (self.debug) NSLog(@"[%@ %@] reset to nil", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-//            [self.tableView reloadData];
-//        }
-//    }
-//}
 
 #pragma mark - UITableViewDataSource
 
@@ -221,6 +194,21 @@
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
     [self.tableView endUpdates];
+}
+
+#pragma mark - segue
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"Display Photo" sender:indexPath];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"Display Photo"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        FCDPhoto *photo = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        ImageVC *ivc = [segue destinationViewController];
+        ivc.image = [UIImage imageWithData:photo.fullSizedImage];
+    }
 }
 
 @end

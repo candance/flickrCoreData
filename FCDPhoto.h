@@ -20,9 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (FCDPhoto *)photoWithFlickrInfo:(NSDictionary *)photoDictionary
            inManagedObjectContext:(NSManagedObjectContext *)context;
 
-+ (void)loadPhotosFromFlickrArray:(NSArray *)photos // of Flickr Dictionary;
-         intoManagedObjectContext:(NSManagedObjectContext *)context;
-
 @end
 
 NS_ASSUME_NONNULL_END
